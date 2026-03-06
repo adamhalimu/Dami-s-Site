@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dami's Kitchen | Order</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #fafafa; }
+    h1 { color: #333; }
+    .menu button { margin: 5px; padding: 8px 12px; background: #ff6600; color: #fff; border: none; cursor: pointer; }
+    .menu button:hover { background: #e65c00; }
+    #cart { margin-top: 20px; padding: 15px; border: 1px solid #ccc; background: #fff; }
+    #checkout-modal { display: none; border: 1px solid #ccc; padding: 20px; background: #fff; }
+    button.checkout { background: #25D366; color: #fff; border: none; padding: 10px 15px; cursor: pointer; }
+    button.checkout:hover { background: #1EBE57; }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Dami's Kitchen</h1>
+
+  <!-- Menu -->
+  <div class="menu">
+    <button onclick="addToCart({name:'Jollof Rice', qty:1, price:1500})">Add Jollof Rice ₦1500</button>
+    <button onclick="addToCart({name:'Chicken', qty:1, price:2000})">Add Chicken ₦2000</button>
+    <button onclick="addToCart({name:'efo-riro and semo', qty:1, price:800})">Add Efo-Riro and Semo ₦3000</button>
+    <button onclick="addToCart({name:'Jollof Rice with Beef', qty:1, price:1500})">Add Jollof Rice with Beef ₦1500</button>
+    <button onclick="addToCart({name:'Pepper Soup', qty:1, price:2000})">Add Pepper Soup ₦2000</button>
+    <button onclick="addToCart({name:'Plantain', qty:1, price:800})">Add Plantain ₦800</button>
+    <button onclick="addToCart({name:'Jollof Rice with Turkey', qty:1, price:10000})">Add Jollof Rice with Turkey ₦10000</button>
+    <button onclick="addToCart({name:'Chicken Soup', qty:1, price:2000})">Add Chicken Soup ₦2000</button>
+    <button onclick="addToCart({name:'Beans with Plantain', qty:1, price:800})">Add Beans with Plantain ₦7000</button>
+  </div>
+
+  <!-- Cart -->
+  <div id="cart">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p id="cart-total">Total: ₦0</p>
+    <button class="checkout" onclick="sendOrder()">Confirm Order on WhatsApp</button>
+  </div>
+
+  <script>
+    let cart = [];
+
+    function addToCart(item) {
+      cart.push(item);
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartItems = document.getElementById('cart-items');
+      cartItems.innerHTML = '';
+      let total = 0;
+
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} x${item.qty} - ₦${item.price * item.qty}`;
+        cartItems.appendChild(li);
+        total += item.price * item.qty;
+      });
+
+      document.getElementById('cart-total').textContent = `Total: ₦${total}`;
+    }
+
+    function sendOrder() {
+      let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      let orderSummary = cart.map(item => `${item.name} x${item.qty} - ₦${item.price * item.qty}`).join('\n');
+      let message = `Hello Dami's Kitchen! I would like to order:\n${orderSummary}\nTotal: ₦${total}`;
+
+    
+      let phoneNumber = "+2348034117124"; 
+      let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>

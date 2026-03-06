@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dami's Kitchen | Menu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Dami's Kitchen</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="socials.html">Socials</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="menu-section">
+    <h2>Our Menu</h2>
+    <p>Browse by category and discover your favorites.</p>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="breakfast">Breakfast</button>
+      <button data-filter="lunch">Lunch</button>
+      <button data-filter="dinner">Dinner</button>
+      <button data-filter="drinks">Drinks</button>
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="menu-grid">
+      <div class="menu-card" data-category="breakfast">
+        <a href="order.html"><img src="pancakes.jpg" alt="Pancakes" /></a>
+        <h3>Pancakes</h3>
+        <p>Fluffy pancakes served with syrup.</p>
+        <span class="price">₦1500</span>
+      </div>
+
+      <div class="menu-card" data-category="lunch">
+         <a href="order.html"> <img src="jollof.jpg" alt="Jollof Rice" /></a>
+        <h3>Jollof Rice</h3>
+        <p>Classic Nigerian jollof rice with chicken.</p>
+        <span class="price">₦2500</span>
+      </div>
+
+      <div class="menu-card" data-category="dinner">
+         <a href="order.html"> <img src="grilled.jpg" alt="Grilled Fish" /></a>
+        <h3>Grilled Fish</h3>
+        <p>Perfectly seasoned fish with sides.</p>
+        <span class="price">₦3500</span>
+      </div>
+
+      <div class="menu-card" data-category="drinks">
+        <a href="order.html"> <img src="coca-cola.jpg" alt="Coca-cola" /></a>
+        <h3>Coca-cola</h3>
+        <p>Refreshing carbonated drink.</p>
+        <span class="price">₦1000</span>
+      </div>
+
+      <div class="menu-card" data-category="breakfast">
+        <a href="order.html"> <img src="coffee.jpg" alt="Coffee" /></a>
+        <h3>Coffee</h3>
+        <p>Rich and aromatic coffee.</p>
+        <span class="price">₦1000</span>
+      </div>
+
+      <div class="menu-card" data-category="drinks">
+        <a href="order.html"> <img src="sprite.jpg" alt="Sprite" /></a>
+        <h3>Sprite</h3>
+        <p>Refreshing lemon-lime soda.</p>
+        <span class="price">₦1000</span>
+      </div>
+
+      <div class="menu-card" data-category="dinner">
+         <a href="order.html"> <img src="white-rice.jpg" alt="White Rice" /> </a>
+        <h3>White Rice</h3>
+        <p>Steamed white rice.</p>
+        <span class="price">₦1000</span>
+      </div>
+
+      <div class="menu-card" data-category="dinner">
+        <a href="order.html"> <img src="chicken.jpg" alt="chicken" /></a>
+        <h3>Grilled Chicken</h3>
+        <p>Seasoned chicken grilled to perfection.</p>
+        <span class="price">₦2500</span>
+      </div>
+
+      <div class="menu-card" data-category="drinks">
+        <a href="order.html"> <img src="pepsi.jpg" alt="Pepsi" /> </a>
+        <h3>Pepsi</h3>
+        <p>Refreshing carbonated drink.</p>
+        <span class="price">₦1000</span>
+      </div>
+
+      
+      <div class="menu-card" data-category="lunch">
+        <a href="order.html"> <img src="salad.jpg" alt="Salad" /></a>
+        <h3>Salad</h3>
+        <p>Fresh and healthy salad.</p>
+        <span class="price">₦1000</span>
+      </div>
+
+      
+      <div class="menu-card" data-category="breakfast">
+        <a href="order.html"> <img src="scrambled-eggs.jpg" alt="Scrambled Eggs" /></a>
+        <h3>Scrambled Eggs</h3>
+        <p>Fluffy scrambled eggs with toast.</p>
+        <span class="price">₦1500</span>
+      </div>
+
+      
+      <div class="menu-card" data-category="drinks">
+        <a href="order.html"> <img src="smoothie.jpg" alt="Smoothie" /></a>
+        <h3>Smoothie</h3>
+        <p>Refreshing fruit smoothie.</p>
+        <span class="price">₦1500</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Dami's Kitchen. All rights reserved.</p>
+  </footer>
+
+  <script src="menu.js"></script>
+</body>
+</html>
