@@ -44,7 +44,7 @@
     <h2>Your Cart</h2>
     <ul id="cart-items"></ul>
     <p id="cart-total">Total: ₦0</p>
-    <button class="checkout" onclick="sendOrder()">Confirm Order on WhatsApp</button>
+    <button class="checkout" onclick="sendOrder()" id="orderBtn">Confirm Order on WhatsApp</button>
   </div>
 
   <script>
@@ -82,6 +82,16 @@
       window.open(url, "_blank");
     }
   </script>
+  <script>
+  document.getElementById('orderBtn').addEventListener('click', function() {
+    gtag('event', 'order_button_click', {
+      'event_category': 'engagement',
+      'event_label': 'Order Now Button'
+    });
+  });
+</script>
+
 </body>
 </html>
+
 
